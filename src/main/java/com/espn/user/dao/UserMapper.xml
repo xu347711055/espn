@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.espn.user.dao.UserMapper" >
+	<resultMap id="BaseResultMap" type="com.espn.user.domain.User">
+		<id column="gkey" property="gkey" jdbcType="BIGINT"/>
+		<result column="name" property="name" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="selectByGkey" resultMap="BaseResultMap" parameterType="long">
+		select * from user where gkey=#{gkey,jdbcType=BIGINT}
+	</select>
+
+</mapper>
