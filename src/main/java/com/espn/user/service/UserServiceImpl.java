@@ -16,4 +16,10 @@ public class UserServiceImpl implements UserService{
 		User user = userMapper.selectByGkey(1);
 		System.out.println("user name: " + user.getName());
 	}
+
+
+	@Override
+	public User verifyUserLogin(User user) {
+		return userMapper.selectByUserNamePassword(user);
+	}
 }

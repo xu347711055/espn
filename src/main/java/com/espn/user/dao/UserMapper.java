@@ -9,4 +9,6 @@ public interface UserMapper {
 	public User selectByGkey(long gkey);
 	
 	public List<User> selectAllUsers();
+	
+	public User selectByUserNamePassword(User user);
 }

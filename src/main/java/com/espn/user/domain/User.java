@@ -4,7 +4,14 @@ public class User {
 
 	private long gkey;
 	private String name;
+	private String password;
 	
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	public long getGkey() {
 		return gkey;
 	}
@@ -16,6 +23,10 @@ public class User {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	@Override
+	public String toString() {
+		return "User [gkey=" + gkey + ", name=" + name + "]";
 	}
 	
 	

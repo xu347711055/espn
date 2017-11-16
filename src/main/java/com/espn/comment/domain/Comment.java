@@ -54,6 +54,12 @@ public class Comment {
 	public void setChangedTime(Date changedTime) {
 		this.changedTime = changedTime;
 	}
+	@Override
+	public String toString() {
+		return "Comment [gkey=" + gkey + ", userGkey=" + userGkey + ", content=" + content + ", previousGkey="
+				+ previousGkey + ", newsGkey=" + newsGkey + ", createdTime=" + createdTime + ", changedTime="
+				+ changedTime + "]";
+	}
 	
 	
 	

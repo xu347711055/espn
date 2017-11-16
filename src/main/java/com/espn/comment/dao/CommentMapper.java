@@ -1,8 +1,13 @@
 package com.espn.comment.dao;
 
+import java.util.List;
+
+import com.espn.comment.domain.Comment;
+
 public interface CommentMapper {
 
-	public void add(Integer userGkey, Integer newsGkey, String content);
+	public void add(Comment comm);
 	
-	public void selectAllCommentsByNews(Integer newsGkey);
+	public List<Comment> selectAllCommentsByNews(Long newsGkey);
+	
 }
