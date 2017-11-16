@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.espn.user.domain.User;
 import com.espn.user.service.UserService;
 
 @Controller
-@RequestMapping("/login")
 public class LoginController {
 	private Logger logger = Logger.getLogger(getClass());
 	@Autowired
@@ -34,19 +34,20 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/check")
-	public String check(@RequestParam(required=true) String username, @RequestParam(required=true) String password, 
+	public @ResponseBody String check(@RequestParam(required=true) String username, @RequestParam(required=true) String password, 
 			HttpServletRequest request){
 		logger.info("username: " + username);
 		logger.info("password: " + password);
 		User loginUser = (User) request.getSession().getAttribute("user");
-		logger.info("login user" + loginUser);
+		logger.info("login user: " + loginUser);
 		if(loginUser != null && loginUser.getName().equals(username) && loginUser.getPassword().equals(password)){
+			
 			
 		}
 		loginUser = new User();
 		loginUser.setName(username);
 		loginUser.setPassword(password);
-		loginUser = userService.verifyUserLogin(loginUser);
+//		loginUser = userService.verifyUserLogin(loginUser);
 		logger.info("verification return: " + loginUser);
 		
 		if(loginUser == null){
@@ -54,6 +55,6 @@ public class LoginController {
 		}
 		
 		request.getSession().setAttribute("user", loginUser);
-		return "success";
+		return "login success";
 	}
 }
