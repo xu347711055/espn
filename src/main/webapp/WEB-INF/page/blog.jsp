@@ -445,7 +445,7 @@
 
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="bootstrap/js/jquery.min.js"></script>
+<script src="${staticResourcePath}/bootstrap/js/jquery.min.js"></script>
 <script type="text/javascript" src="${staticResourcePath}/js/styleswitch.js"></script>
 <script type="text/javascript" src="${staticResourcePath}/js/animatedcollapse.js"></script>
 <script type="text/javascript" src="${staticResourcePath}/js/ddsmoothmenu.js"></script>
@@ -459,7 +459,4 @@
 <script src="${staticResourcePath}/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-<script type="text/javascript">
-	
-</script>
 </html>

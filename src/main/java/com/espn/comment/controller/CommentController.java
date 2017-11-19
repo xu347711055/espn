@@ -17,16 +17,16 @@ public class CommentController {
 	@Autowired
 	private CommentService commService;
 	
-	@RequestMapping("/comm")
-	public @ResponseBody Comment addComment(Comment comment, HttpServletRequest request){
+	@RequestMapping("/addComment")
+	public String addComment(Comment comment, HttpServletRequest request){
 		logger.info(comment);
 		User user = (User) request.getSession().getAttribute("user");
 		logger.info(user);
 		if(user == null){
-			//redirect to login
+			return "login";
 		}
 		Comment resultObj = commService.addComment(comment, user);
 		logger.info("return: " + resultObj);
-		return resultObj;
+		return "";
 	}
 }
