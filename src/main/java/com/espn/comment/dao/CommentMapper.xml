@@ -4,7 +4,56 @@
 <mapper namespace="com.espn.comment.dao.CommentMapper" >
 	<resultMap id="BaseResultMap" type="com.espn.comment.domain.Comment">
 		<id column="gkey" property="gkey" jdbcType="BIGINT"/>
-		<result column="name" property="name" jdbcType="VARCHAR"/>
-		 
+		<result column="content" property="content" jdbcType="VARCHAR"/>
+		<result column="created_time" property="createdTime" jdbcType="TIMESTAMP"/>
+		<result column="news_gkey" property="newsGkey" jdbcType="BIGINT"/>
+		<association property="previousComment" column="previous_gkey" select="com.espn.comment.dao.CommentMapper.selectByGkey">
+			<id column="previous_gkey" property="gkey" jdbcType="BIGINT"/>
+			<result column="content" property="content" jdbcType="VARCHAR"/>
+			<result column="created" property="createdTime" jdbcType="TIMESTAMP"/>
+			<result column="news_gkey" property="newsGkey" jdbcType="BIGINT" /> 
+			<association property="user" column="user_gkey" javaType="com.espn.user.domain.User">
+				<id column="user_gkey" property="gkey" jdbcType="BIGINT"/>
+				<result column="username" property="username" jdbcType="VARCHAR"/>
+				<result column="password" property="password" jdbcType="VARCHAR"/>
+			</association>
+		</association>
+		<association property="user" column="user_gkey" javaType="com.espn.user.domain.User">
+			<id column="user_gkey" property="gkey" jdbcType="BIGINT"/>
+			<result column="username" property="username" jdbcType="VARCHAR"/>
+			<result column="password" property="password" jdbcType="VARCHAR"/>
+		</association>
 	</resultMap>
+	
+	<select id="selectAllCommentsByNews" parameterType="long" resultMap="BaseResultMap">
+		select 
+			c.gkey, 
+			c.content, 
+			c.created_time, 
+			c.news_gkey, 
+			c.previous_gkey, 
+			c.user_gkey,
+			u.username
+		from comment c, news n, user u
+		where c.news_gkey=n.gkey
+		and c.user_gkey=u.gkey
+		and c.news_gkey=#{newsGkey}
+	</select>
+	
+	<select id="selectByGkey" parameterType="long" resultMap="BaseResultMap">
+		select 
+			c.gkey,
+			c.user_gkey,
+			c.news_gkey,
+			c.content,
+			c.created_time,
+			c.changed_time,
+			c.previous_gkey
+		from
+			comment c inner join
+			news n 
+		where
+		 	c.gkey=#{gkey} 
+		and c.news_gkey=n.gkey
+	</select>
 </mapper>

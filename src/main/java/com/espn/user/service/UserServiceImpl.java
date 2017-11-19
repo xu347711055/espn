@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService{
 	
 	public void test(){
 		User user = userMapper.selectByGkey(1);
-		System.out.println("user name: " + user.getName());
+		System.out.println("user name: " + user.getUsername());
 	}
 
 

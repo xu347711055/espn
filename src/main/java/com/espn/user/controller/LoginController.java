@@ -40,21 +40,21 @@ public class LoginController {
 		logger.info("password: " + password);
 		User loginUser = (User) request.getSession().getAttribute("user");
 		logger.info("login user: " + loginUser);
-		if(loginUser != null && loginUser.getName().equals(username) && loginUser.getPassword().equals(password)){
-			
-			
+		if(loginUser != null && loginUser.getUsername().equals(username) && loginUser.getPassword().equals(password)){
+			logger.info("user exist in session");
+			return "success";
 		}
 		loginUser = new User();
 		loginUser.setName(username);
 		loginUser.setPassword(password);
-//		loginUser = userService.verifyUserLogin(loginUser);
-		logger.info("verification return: " + loginUser);
+		User returnUser = userService.verifyUserLogin(loginUser);
+		logger.info("verification return: " + returnUser);
 		
-		if(loginUser == null){
+		if(returnUser == null){
 			return "fail";
 		}
 		
-		request.getSession().setAttribute("user", loginUser);
-		return "login success";
+		request.getSession().setAttribute("user", returnUser);
+		return "success";
 	}
 }

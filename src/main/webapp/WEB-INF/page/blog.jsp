@@ -1,10 +1,18 @@
-﻿
+﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Identity</title>
+<!--<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<!--// Javascripts //-->
+<!--  jQuery文件。务必在bootstrap.min.js 之前引入  -->
+
+<title>Sports</title>
 <!--// Stylesheets //-->
+
 <link href="${staticResourcePath}/css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="${staticResourcePath}/css/red.css" title="styles1" media="screen" />
 <link rel="alternate stylesheet" type="text/css" href="${staticResourcePath}/css/blue.css" title="styles2" media="screen" />
@@ -13,16 +21,8 @@
 <link rel="alternate stylesheet" type="text/css" href="${staticResourcePath}/css/green.css" title="styles5" media="screen" />
 <link rel="alternate stylesheet" type="text/css" href="${staticResourcePath}/css/orange-red.css" title="styles6" media="screen" />
 <link href="${staticResourcePath}/css/fancybox.css" rel="stylesheet" type="text/css" />
-<!--// Javascripts //-->
-<script type="text/javascript" src="${staticResourcePath}/js/jquery.min.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/styleswitch.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/animatedcollapse.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/ddsmoothmenu.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/scrolltopcontrol.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/tabs.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/jquery.fancybox-1.3.1.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/lightbox.js"></script>
-<script type="text/javascript" src="${staticResourcePath}/js/functions.js"></script>
+<link href="${staticResourcePath}/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                     	<h3 class="widget-head white">Our Mission</h3>
                         <ul>
                         	<li>
-                            	<a href="#" class="thumb"><img src="images/mission.jpg" alt="" /></a>
+                            	<a href="#" class="thumb"><img src="${staticResourcePath}/images/mission.jpg" alt="" /></a>
                                 <p><a href="#" class="bold">Donec ut nibh tellus. Proin erat urna, luctuseg ementum at, facilisis sed nunc.</a></p>
                             </li>
                             <li><a href="#">Aenean commodo dolor at sapien luctus (05:30)</a></li>
@@ -80,7 +80,7 @@
                         <ul class="post-thumbs">
                         	<li>
                             	<div class="thumb">
-                                	<a href="#"><img src="${staticResourcePath}/images/post1.gif" alt="" /></a>
+                                	<a href="#"><img src="images/post1.gif" alt="" /></a>
                                 </div>
                                 <div class="desc">
                                 	<a href="#" class="title">Lorem ipsum dolor sit amet, consect etur adipiscing elit.</a>
@@ -261,51 +261,23 @@
             	<h2 class="widget-head-border colr">数据帝：哈登一成就称霸NBA 绿军复制昔日壮举</h2>
                 <div class="blog">
                     <!-- Blog Post Start -->
-                    <div class="post">
-                        <div class="p-date">
-                            <span>05</span>
-                            <span>JUL</span>
-                        </div>
-                        <div class="post-sec">
-                            <h3 class="post-head"><a href="blogpost.html">腾讯体育讯 北京时间11月13日，NBA常规赛继续进行，今日一共有4场比赛，其中火箭击败步行者，哈登自上赛季以来20次在前三节拿到至少25分10次助攻，成为联盟第一人；凯尔特人击败猛龙取得12连胜，自2009年以来首次完成这一壮举，以下是今日数据汇总</a></h3>
-                            <div class="thumb">
-                                <a href="#"><img src="images/post-big1.jpg" alt="" /></a>
-                                <div class="thumb-hover">
-                                	<div class="thumb-actions">
-                                        <a href="blogpost.html" class="link">&nbsp;</a>
-                                        <a href="images/large1.jpg" class="tip4 zoom">&nbsp;</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-desc">
-                                <p>
-                                    	<strong><b>哈登一数据称霸联盟</b></strong><br />
-                                    	火箭轻取步行者，哈登拿到26分15次助攻，自从上赛季以来，这已经是哈登第20次在前三节就拿到至少25分10次助攻，联盟其他球员在这段期间里合计只打出13次这样的数据。<br />
-                                    	<strong><b>哈登首节助攻平生涯纪录</b></strong><br />
-                                    	哈登首节就送出了9次助攻，单节9次助攻也追平了他生涯单节助攻纪录，在2016年对阵湖人的比赛里，哈登曾在首节送出9次助攻，火箭队史单节助攻纪录是约翰-卢卡斯保持的12个。NBA单节助攻纪录是14个，当年约翰-卢卡斯和史蒂夫-布雷克都在单节打出过这样的数据。<br />
-										<strong><b>哈登13次送15+助攻，队史近33年首人</b></strong><br />
-这是哈登在火箭生涯里第13次送出至少15次助攻，自从1984-85赛季以来，哈登送出15+助攻的次数是火箭队史最多。
-                                </p>
-                                <div class="post-opts">
-                                    <p class="postby">Posted By <a href="#" class="txthover">Admin</a></p>
-                                    <p class="post-time">Posted Apr 27, 2012</p>
-                                    <p class="tags">Tags: <a href="#">Couple</a>, <a href="#">Hotel</a>, <a href="#">Sport</a></p>
-                                    <a href="#" class="comments-btn">02</a>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="button-small"><span class="share"></span>Share</a>
-                    </div>
+                    ${news.content}
                     <!-- Blog Post End -->
                     <!-- Blog Post Start -->
                     <div class="post">
+                    	<div class="post-sec">
+                    		<h3 class="post-head">留言区</h3>
+                    	</div>
+                    </div>
+                    <c:forEach items="${comments }" var="comment" varStatus="status">
+                    <div class="post comment">
                         <div class="p-date">
-                            <span>05</span>
-                            <span>JUL</span>
+                            <span>${status.index + 1 }</span>
+                            <span>楼</span>
                         </div>
                         <div class="post-sec">
-                            <h3 class="post-head"><a href="blogpost.html">Lorem ipsum dolor sit amet, consectetur adipiscing.</a></h3>
-                            <div class="thumb">
+                            <!-- <h3 class="post-head"><a href="blogpost.html">Lorem ipsum dolor sit amet, consectetur adipiscing.</a></h3> -->
+                            <!-- <div class="thumb">
                                 <a href="#"><img src="images/post-big2.jpg" alt="" /></a>
                                 <div class="thumb-hover">
                                 	<div class="thumb-actions">
@@ -313,24 +285,33 @@
                                         <a href="images/large1.jpg" class="tip4 zoom">&nbsp;</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="post-desc">
                                 <p>
-                                    Forest Gump once said you can tell a lot about a person by their pictures -- where they're going, where they've been. Or maybe it was their shoes, I can't remember. Anyways, for my next trick, I've decided to show you a crop of photos that haven't yet made it on the blog. I'll write a little about each photo but mainly it's a pixel show. Enjoy! We'll start back in Paris. Our last night we ate at this little french restaurant just down the street.
+                                    ${comment.content}
                                 </p>
                                 <div class="post-opts">
-                                    <p class="postby">Posted By <a href="#" class="txthover">Admin</a></p>
-                                    <p class="post-time">Posted Apr 27, 2012</p>
-                                    <p class="tags">Tags: <a href="#">Couple</a>, <a href="#">Hotel</a>, <a href="#">Sport</a></p>
-                                    <a href="#" class="comments-btn">02</a>
+                                <%-- <c:choose>
+                                 	<c:when test="${comment.previousComment != null }">
+                                    	<p class="postby">来自: <a href="#" class="txthover">${comment.user.username} </a> 回复${comment.previousComment.user.username }: ${comment.previousComment.content }</p>
+                                    </c:when>
+                                    <c:otherwise>
+	                                    <p class="postby">来自: <a href="#" class="txthover">${comment.user.username} </a></p>
+                                    </c:otherwise>
+                                 </c:choose> --%>
+                                 <p class="postby">来自: <a href="#" class="txthover">${comment.user.username} </a></p>
+                                    <p class="post-time">${comment.createdTime }</p>
+                                   
+                                    <a href="#" class="comments-btn">回复</a>
                                 </div>
                             </div>
-                        </div>
-                        <a href="#" class="button-small"><span class="share"></span>Share</a>
+                        </div>         
+                        <!-- <a href="#" class="button-small"><span class="share"></span>Share</a> -->
                     </div>
+                    </c:forEach>
                     <!-- Blog Post End -->
                     <!-- Blog Post Start -->
-                    <div class="post">
+                    <!--<div class="post">
                         <div class="p-date">
                             <span>05</span>
                             <span>JUL</span>
@@ -353,10 +334,10 @@
                             </div>
                         </div>
                         <a href="#" class="button-small"><span class="share"></span>Share</a>
-                    </div>
+                    </div>-->
                     <!-- Blog Post End -->
                     <!-- Blog Post Start -->
-                    <div class="post">
+                    <!--<div class="post">
                         <div class="p-date">
                             <span>05</span>
                             <span>JUL</span>
@@ -376,11 +357,11 @@
                             </div>
                         </div>
                         <a href="#" class="button-small"><span class="share"></span>Share</a>
-                    </div>
+                    </div>-->
                     <!-- Blog Post End -->
                     <!-- Pagination Start -->
-                    <div class="pagination">
-                    	 <ul>
+                    
+                    	 <ul class="pagination">
                          	<li><a href="#">Previous</a></li>
                             <li><a href="#" class="active">1</a></li>
                             <li><a href="#">2</a></li>
@@ -390,237 +371,13 @@
                             <li><a href="#">6</a></li>
                             <li class="next"><a href="#">Next</a></li>
                          </ul>
-                    </div>
+                   
                     <!-- Pagination End -->
                 </div>
             </div>
             <!-- Two Third Box End -->
             <!-- One Third Box Start -->
-            <div class="onethird right">
-            	<!-- One Third Box Start -->
-                <div class="onethird box left">
-                	<!-- Tabs Widget Start -->
-            		<div class="widget tabs-widget">
-                        <!-- Tab Code Start -->
-                        <div class="tab-section">
-                        	<div class="tab_menu_container">
-                            	<ul id="tabs-code">  
-                                	<li style="width:34%;"><a class="current" rel="tab1">Blogs</a></li>
-                                    <li style="width:33%;"><a class="" rel="tab2">Tags</a></li>
-                                    <li style="width:33%;"><a class="" rel="tab3">Comments</a></li>
-                                </ul> <!-- END -->
-                                <div class="clear"></div>
-                            </div>
-                            <div class="tab_container">
-                            	<div class="tab_container_in">
-                                	<div id="tab1" class="tab_sidebar_list">
-                                        <ul class="post-thumbs">
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post1.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Lorem ipsum dolor sit amet, consect etur adipiscing elit.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post2.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Consect etur adipiscing elit.</a>
-                                                    <p>Luctus eget elementum at, facilisis sed unc Donec neque felis, fringilla.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post3.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Facilisis sed nunconec neque felis.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post4.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Facilisis sed nunconec neque felis.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="tab2" class="tab_sidebar_list">  
-                                    	<div class="tags-box">
-                                        	<a href="#">Lorem</a>
-                                            <a href="#">ipsum</a>
-                                            <a href="#">dolor</a>
-                                            <a href="#">sit</a>
-                                            <a href="#">amet</a>
-                                            <a href="#">consectetur</a>
-                                            <a href="#">adipiscing</a>
-                                            <a href="#">elit</a>
-                                            <a href="#">tempus</a>
-                                            <a href="#">lacinia</a>
-                                            <a href="#">posuere</a>
-                                            <a href="#">consequat</a>
-                                            <a href="#">dictumst</a>
-                                            <a href="#">lacinia</a>
-                                            <a href="#">Lorem</a>
-                                            <a href="#">ipsum</a>
-                                            <a href="#">dolor</a>
-                                            <a href="#">sit</a>
-                                            <a href="#">amet</a>
-                                            <a href="#">consectetur</a>
-                                            <a href="#">adipiscing</a>
-                                            <a href="#">elit</a>
-                                            <a href="#">tempus</a>
-                                            <a href="#">lacinia</a>
-                                            <a href="#">posuere</a>
-                                            <a href="#">consequat</a>
-                                            <a href="#">dictumst</a>
-                                            <a href="#">lacinia</a>
-                                        </div>
-                                    </div> 
-                                    <div id="tab3" class="tab_sidebar_list">
-                                        <ul class="post-thumbs">
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post1.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Lorem ipsum dolor sit amet, consect etur adipiscing elit.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post2.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Consect etur adipiscing elit.</a>
-                                                    <p>Luctus eget elementum at, facilisis sed unc Donec neque felis, fringilla.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post3.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Facilisis sed nunconec neque felis.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb">
-                                                    <a href="#"><img src="images/post4.gif" alt="" /></a>
-                                                </div>
-                                                <div class="desc">
-                                                    <a href="#" class="title">Facilisis sed nunconec neque felis.</a>
-                                                    <p>Donec ut nibh tellus. Proin erat urna, luct us eget elementum at, facilisis sed.</p>
-                                                    <a href="#" class="readmore">Read more</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div> 
-                                    <div class="clear"></div>                                    
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Tab Code End -->
-                    </div>
-                    <!-- Tabs Widget End -->
-            	</div>
-                <!-- One Third Box End -->
-                <!-- One Third Box Start -->
-                <div class="onethird box left">
-                	<h3 class="widget-head-border colr">Blog Categories</h3>
-                	<!-- Blog Categories Widget Start -->
-            		<div class="widget widget_categories">
-                    	<ul>
-                        	<li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">Wallpapers</a></li>
-                            <li><a href="#">Freebies</a></li>
-                            <li><a href="#">UX DESIGN</a></li>
-                            <li><a href="#">Usability</a></li>
-                            <li><a href="#">User Experience</a></li>
-                            <li><a href="#">UI Design</a></li>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">Illustrator</a></li>
-                            <li><a href="#">Wallpapers</a></li>
-                            <li><a href="#">Freebies</a></li>
-                            <li><a href="#">UX DESIGN</a></li>
-                            <li><a href="#">Usability</a></li>
-                        </ul>
-                    </div>
-                    <!-- Blog Categories Widget Start -->
-            	</div>
-                <!-- One Third Box End -->
-                <!-- One Third Box Start -->
-                <div class="onethird box left">
-                	<!-- Upcoming Widget Start -->
-            		<div class="widget upcoming-events">
-                    	<h3 class="widget-head-border colr">Upcomming Events</h3>
-                        <ul>
-                        	<li>
-                            	<div class="date">
-                                	<span>01</span>
-                                    <span>JUL</span>
-                                </div>
-                                <div class="desc">
-                                	<a href="#" class="title txthover">Aenean commodo dolor at sapien luc tus non venenatis</a>
-                                    <p class="time">12:00 PM - 1:00 PM</p>
-                                    <p class="location">Location: Lorum ipsum Church</p>
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="date">
-                                	<span>05</span>
-                                    <span>JUL</span>
-                                </div>
-                                <div class="desc">
-                                	<a href="#" class="title txthover">Aenean commodo dolor at sapien luc tus non venenatis</a>
-                                    <p class="time">12:00 PM - 1:00 PM</p>
-                                    <p class="location">Location: Lorum ipsum Church</p>
-                                </div>
-                            </li>
-                            <li>
-                            	<div class="date">
-                                	<span>08</span>
-                                    <span>JUL</span>
-                                </div>
-                                <div class="desc">
-                                	<a href="#" class="title txthover">Aenean commodo dolor at sapien luc tus non venenatis</a>
-                                    <p class="time">12:00 PM - 1:00 PM</p>
-                                    <p class="location">Location: Lorum ipsum Church</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Upcoming Widget End -->
-            	</div>
-                <!-- One Third Box End -->
-                <!-- One Third Box Start -->
-                <div class="onethird box left">
-                	<!-- Facebook Widget Start -->
-            		<div class="widget facebook-widget">
-                    	<a href="#"><img src="images/facebook.jpg" alt="" /></a>
-                    </div>
-                    <!-- Facebook Widget Start -->
-            	</div>
-                <!-- One Third Box End -->
-            </div>
+            
             <!-- One Third Box End -->
         </div>
     </div>
@@ -685,7 +442,24 @@
     </div>
     <!-- Footer End -->
 </div>
-<!-- Wrapper End -->
 
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="bootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/styleswitch.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/animatedcollapse.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/scrolltopcontrol.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/tabs.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/jquery.fancybox-1.3.1.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/lightbox.js"></script>
+<script type="text/javascript" src="${staticResourcePath}/js/functions.js"></script>
+<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<script src="${staticResourcePath}/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
+<script type="text/javascript">
+	
+</script>
 </html>

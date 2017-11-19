@@ -3,7 +3,7 @@ package com.espn.user.domain;
 public class User {
 
 	private long gkey;
-	private String name;
+	private String username;
 	private String password;
 	
 	public String getPassword() {
@@ -18,15 +18,15 @@ public class User {
 	public void setGkey(long gkey) {
 		this.gkey = gkey;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.username = name;
 	}
 	@Override
 	public String toString() {
-		return "User [gkey=" + gkey + ", name=" + name + "]";
+		return "User [gkey=" + gkey + ", name=" + username + "]";
 	}
 	
 	

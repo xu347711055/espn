@@ -21,22 +21,15 @@
 			alert('用户名或密码不能为空');
 			return;
 		}
-		$.ajax({
-			type:'post',
-			url:"check.action",
-			data:$('#loginForm').serialize(),
-			success: function(data){
-				console.log(data);
-			}
-			/* error: function(data){
-				console.log("error: " + data.responseText);
-			} */
-		});
-		/* $.post("check.action",$('#loginForm').serialize(),function(result,status){
+		
+		$.post("check.action",$('#loginForm').serialize(),function(result,status){
 			console.log(result);
-			console.log(status);
-		}); */
-		/* alert($('#loginForm').serialize()); */
+			if(result == 'success'){
+				alert("登陆成功")
+			}else{
+				alert("用户名或密码错误")	
+			}
+		});
 	});
 </script>
 </html>

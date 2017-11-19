@@ -17,7 +17,7 @@ public class CommentServiceImpl implements CommentService{
 
 	@Override
 	public Comment addComment(Comment comment, User user) {
-		comment.setUserGkey(user.getGkey());
+		comment.setUser(user);
 		commDao.add(comment);
 		return comment;
 	}

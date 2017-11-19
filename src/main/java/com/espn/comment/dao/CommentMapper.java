@@ -10,4 +10,6 @@ public interface CommentMapper {
 	
 	public List<Comment> selectAllCommentsByNews(Long newsGkey);
 	
+	public Comment selectByGkey(Long gkey);
+	
 }
